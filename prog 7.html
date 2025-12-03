@@ -1,0 +1,41 @@
+<html>
+<head>
+<title>Employee Salary Calculation</title>
+</head>
+<body>
+
+<h2>Employee Salary Form</h2>
+Employee Name: <input type="text" id="name"><br><br>
+Basic Pay: <input type="number" id="basic"><br><br>
+<button onclick="calculate()">Calculate</button>
+<h3>Result:</h3>
+<div id="result"></div>
+<script>
+function calculate() {
+var name = document.getElementById("name").value;
+var basic = parseFloat(document.getElementById("basic").value);
+
+var DA = 0.1 * basic;
+var HRA = 0.15 * basic;
+var PF = 0.12 * basic;
+var TAX = 0.05 * basic;
+
+var gross = basic + DA + HRA;
+var deduction = PF + TAX;
+var net = gross - deduction;
+
+document.getElementById("result").innerHTML =
+"Name: " + name + "<br>" +
+"Basic Pay: " + basic + "<br>" +
+"DA: " + DA + "<br>" +
+"HRA: " + HRA + "<br>" +
+"PF: " + PF + "<br>" +
+"TAX: " + TAX + "<br>" +
+"Gross Pay: " + gross + "<br>" +
+"Deduction: " + deduction + "<br>" +
+"Net Pay: " + net;
+}
+</script>
+
+</body>
+</html>
