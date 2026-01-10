@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function validate() {
+  let email = document.f1.email.value;
+  let mobile = document.f1.mobile.value;
+  let text = document.f1.text.value;
+
+  if(email=="" || mobile=="" || text=="") {
+    alert("Field empty hai");
+    return false;
+  }
+  if(mobile.length != 10) {
+    alert("Mobile 10 digit ka hona chahiye");
+    return false;
+  }
+  return true;
+}
+</script>
+</head>
+<body>
+<form name="f1" onsubmit="return validate()">
+Email: <input type="text" name="email"><br>
+Mobile: <input type="text" name="mobile"><br>
+Text: <input type="text" name="text"><br>
+<input type="submit">
+</form>
+</body>
+</html>
